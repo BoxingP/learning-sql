@@ -1,4 +1,4 @@
-SELECT ones.num + tens.num + hundreds.num num 
+SELECT ones.num + tens.num + 1 num 
 FROM
 (SELECT 0 num UNION ALL
  SELECT 1 num UNION ALL
@@ -21,8 +21,4 @@ CROSS JOIN
  SELECT 70 num UNION ALL
  SELECT 80 num UNION ALL
  SELECT 90 num) tens
-CROSS JOIN
-(SELECT 0 num UNION ALL
- SELECT 100 num) hundreds
-WHERE ones.num + tens.num + hundreds.num BETWEEN 1 AND 100
 ORDER BY num;
